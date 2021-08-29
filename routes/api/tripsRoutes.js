@@ -16,7 +16,7 @@ router.delete("/:id", async (req, res) => {
   try {
     const deletedTrip = await Trips.destroy({
       where: {
-        trips_id: req.params.id,
+        id: req.params.id,
       },
     });
     if (!deletedTrip) {

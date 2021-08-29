@@ -13,7 +13,7 @@ Trips.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    traveller_amount: {
+    traveler_amount: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

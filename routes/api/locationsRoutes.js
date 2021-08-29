@@ -39,7 +39,7 @@ router.delete("/:id", async (req, res) => {
   try {
     const deletedLocation = await Location.destroy({
       where: {
-        location_id: req.params.id,
+        id: req.params.id,
       },
     });
     if (!deletedLocation) {

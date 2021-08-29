@@ -22,8 +22,9 @@ router.post("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const travelerData = await Traveler.findByPk(req.params.id, {
-      include: [{ model: Location }, { model: Trips }],
+      include: [{ model: Trips }],
     });
+
     if (!travelerData) {
       res.status(404).json({ message: "No traveler found with that id!" });
       return;
@@ -38,7 +39,7 @@ router.delete("/:id", async (req, res) => {
   try {
     const deletedTraveler = await Traveler.destroy({
       where: {
-        traveler_id: req.params.id,
+        id: req.params.id,
       },
     });
     if (!deletedTraveler) {
